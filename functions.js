@@ -35,8 +35,7 @@ function addAccount(accountArr) {
 
     // save the data into a new line of file called users.txt
     try {
-        appendFileSync('users.txt', accountArr.toString());
-        console.log(accountArr.toString());
+        appendFileSync('users.txt', accountArr.toString() + "\n");
     } catch (err) {
         return false                                // failed to save user
     }
@@ -44,4 +43,5 @@ function addAccount(accountArr) {
     return true                                     // user is saved
 }
 
-// console.log(addAccount(["Alan", "Turing", "aturing@w3c.com", 58]))
+// export functions
+export { addAccount }
